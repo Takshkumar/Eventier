@@ -56,7 +56,7 @@ body {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 32px;
     flex: 1;
     justify-content: flex-end;
 }
@@ -71,6 +71,16 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #5047fa;
+}
+
+.nav-link.active {
+    color: #5047fa;
+    font-weight: 600;
 }
 
 .button-group {
@@ -103,6 +113,33 @@ body {
 .btn-secondary {
     background-color: #f0f0f5;
     color: #111118;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.create-event-btn {
+    background-color: #5047fa;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 /* Hero Section */
@@ -477,6 +514,83 @@ body {
 .footer-copyright {
     color: #615f8c;
     font-size: 16px;
+}
+
+/* About Page Specific Styles */
+.team-card {
+    text-align: center;
+}
+
+.team-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.mission-content {
+    padding: 0 16px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.mission-text {
+    font-size: 16px;
+    color: #111118;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.timeline {
+    padding: 0 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 40px;
+    width: 2px;
+    height: 24px;
+    background-color: #dbdbe6;
+}
+
+.timeline-icon {
+    width: 24px;
+    height: 24px;
+    color: #111118;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111118;
+    margin-bottom: 4px;
+}
+
+.timeline-date {
+    font-size: 14px;
+    color: #615f8c;
 }
 
 /* Responsive Design */
