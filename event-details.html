@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Eventier</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+    <div class="page-layout">
+        <!-- Navigation Component -->
+        <div id="navigation-placeholder"></div>
+
+        <!-- Main Content -->
+        <main>
+            <div class="container">
+                <!-- Back Button -->
+                <div class="back-button-container">
+                    <button class="back-button" onclick="window.location.href='events.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+                        </svg>
+                        Back to Events
+                    </button>
+                </div>
+
+                <!-- Event Hero Section -->
+                <section class="event-hero">
+                    <div class="event-hero-image" id="eventHeroImage">
+                        <!-- Background image will be set by JavaScript -->
+                    </div>
+                    <div class="event-hero-overlay">
+                        <div class="event-hero-content">
+                            <div class="event-category-badge" id="eventCategory"></div>
+                            <h1 class="event-title" id="eventTitle">Event Title</h1>
+                            <p class="event-description" id="eventDescription">Event description will appear here.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Event Details Section -->
+                <section class="event-details-section">
+                    <div class="event-details-grid">
+                        <!-- Event Info -->
+                        <div class="event-info-column">
+                            <div class="event-detail-item">
+                                <div class="detail-label">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"></path>
+                                    </svg>
+                                    Date & Time
+                                </div>
+                                <div class="detail-value" id="eventDateTime">October 26, 2024 at 9:00 AM</div>
+                            </div>
+
+                            <div class="event-detail-item">
+                                <div class="detail-label">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,160Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path>
+                                    </svg>
+                                    Location
+                                </div>
+                                <div class="detail-value" id="eventLocation">Grand Convention Center, Metropolis</div>
+                            </div>
+
+                            <div class="event-detail-item">
+                                <div class="detail-label">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path>
+                                    </svg>
+                                    Organizer
+                                </div>
+                                <div class="detail-value" id="eventOrganizer">Tech Events Inc.</div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Information -->
+                        <div class="ticket-column">
+                            <h2 class="section-title">Ticket Information</h2>
+                            <div class="ticket-options" id="ticketOptions">
+                                <!-- Tickets will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Event Section -->
+                <section class="about-event-section">
+                    <h2 class="section-title">About the Event</h2>
+                    <div class="about-content" id="aboutContent">
+                        <p>This is a comprehensive event that brings together industry leaders, innovators, and enthusiasts. Join us for an unforgettable experience filled with learning, networking, and inspiration.</p>
+                        
+                        <h3>What to Expect:</h3>
+                        <ul>
+                            <li>Keynote presentations from industry experts</li>
+                            <li>Interactive workshops and hands-on sessions</li>
+                            <li>Networking opportunities with like-minded professionals</li>
+                            <li>Exhibition of latest products and services</li>
+                            <li>Panel discussions on current trends and future outlook</li>
+                        </ul>
+
+                        <h3>Who Should Attend:</h3>
+                        <ul>
+                            <li>Industry professionals and executives</li>
+                            <li>Entrepreneurs and startup founders</li>
+                            <li>Students and recent graduates</li>
+                            <li>Anyone interested in the latest industry developments</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Organizer Section -->
+                <section class="organizer-section">
+                    <h2 class="section-title">Organizer</h2>
+                    <div class="organizer-card">
+                        <div class="organizer-image" id="organizerImage">
+                            <!-- Organizer image will be set by JavaScript -->
+                        </div>
+                        <div class="organizer-info">
+                            <h3 class="organizer-name" id="organizerName">Emily Carter</h3>
+                            <p class="organizer-company" id="organizerCompany">Tech Events Inc.</p>
+                            <p class="organizer-description">Experienced event organizer with over 10 years in the industry, specializing in technology conferences and networking events.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Related Events Section -->
+                <section class="related-events-section">
+                    <h2 class="section-title">Related Events</h2>
+                    <div class="related-events-grid" id="relatedEvents">
+                        <!-- Related events will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+                <div class="social-links">
+                    <a href="#">
+                        <div class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <p class="footer-copyright">© 2024 Eventier. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/navigation.js"></script>
+    <script>
+        // Get event data from URL parameters
+        function getEventFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('id');
+            
+            // Complete event data matching the events list
+            const events = {
+                '1': {
+                    id: 1,
+                    title: "Toronto Jazz Festival",
+                    category: "music",
+                    date: "2024-11-15",
+                    time: "7:00 PM",
+                    location: "Toronto, ON",
+                    venue: "Harbourfront Centre",
+                    price: 45,
+                    image: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Experience the best of jazz music in the heart of Toronto.",
+                    organizer: {
+                        name: "Emily Carter",
+                        company: "Toronto Music Events",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 45, features: ["Access to all performances", "Festival program", "Food vendors access"] }
+                    ]
+                },
+                '2': {
+                    id: 2,
+                    title: "Vancouver Tech Summit",
+                    category: "tech",
+                    date: "2024-11-20",
+                    time: "9:00 AM",
+                    location: "Vancouver, BC",
+                    venue: "Vancouver Convention Centre",
+                    price: 299,
+                    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Leading technology conference featuring AI, blockchain, and innovation.",
+                    organizer: {
+                        name: "David Chen",
+                        company: "Tech Events Inc.",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 299, features: ["Access to all sessions", "Networking events", "Conference materials"] }
+                    ]
+                },
+                '3': {
+                    id: 3,
+                    title: "Montreal Art Gallery Opening",
+                    category: "arts",
+                    date: "2024-11-25",
+                    time: "6:00 PM",
+                    location: "Montreal, QC",
+                    venue: "Musée d'art contemporain",
+                    price: 0,
+                    image: "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Exclusive opening of contemporary art exhibition.",
+                    organizer: {
+                        name: "Sophie Martin",
+                        company: "Montreal Arts Council",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Free Admission", price: 0, features: ["Access to all galleries", "Opening reception", "Artist meet & greet"] }
+                    ]
+                },
+                '4': {
+                    id: 4,
+                    title: "New York Food & Wine Festival",
+                    category: "food",
+                    date: "2024-12-01",
+                    time: "12:00 PM",
+                    location: "New York, NY",
+                    venue: "Central Park",
+                    price: 85,
+                    image: "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Culinary delights from top chefs and wineries.",
+                    organizer: {
+                        name: "Sarah Wilson",
+                        company: "NYC Food Events",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 85, features: ["Food tastings", "Wine samples", "Chef demonstrations", "Festival program"] }
+                    ]
+                },
+                '5': {
+                    id: 5,
+                    title: "Calgary Hockey Championship",
+                    category: "sports",
+                    date: "2024-12-05",
+                    time: "7:30 PM",
+                    location: "Calgary, AB",
+                    venue: "Scotiabank Saddledome",
+                    price: 75,
+                    image: "https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Championship game featuring Calgary Flames vs Edmonton Oilers.",
+                    organizer: {
+                        name: "Mike Johnson",
+                        company: "Calgary Sports Events",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 75, features: ["Championship game", "Great atmosphere", "Access to concessions"] }
+                    ]
+                },
+                '6': {
+                    id: 6,
+                    title: "Los Angeles Music Festival",
+                    category: "music",
+                    date: "2024-12-10",
+                    time: "2:00 PM",
+                    location: "Los Angeles, CA",
+                    venue: "Hollywood Bowl",
+                    price: 120,
+                    image: "https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Multi-genre music festival featuring top artists.",
+                    organizer: {
+                        name: "Alex Rodriguez",
+                        company: "LA Music Productions",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 120, features: ["Access to all stages", "Festival wristband", "Food vendors"] }
+                    ]
+                },
+                '7': {
+                    id: 7,
+                    title: "Ottawa Business Networking",
+                    category: "business",
+                    date: "2024-12-15",
+                    time: "6:00 PM",
+                    location: "Ottawa, ON",
+                    venue: "Château Laurier",
+                    price: 50,
+                    image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Connect with business leaders and entrepreneurs.",
+                    organizer: {
+                        name: "Jennifer Lee",
+                        company: "Ottawa Business Network",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 50, features: ["Networking session", "Light refreshments", "Business directory"] }
+                    ]
+                },
+                '8': {
+                    id: 8,
+                    title: "Chicago Comedy Show",
+                    category: "community",
+                    date: "2024-12-20",
+                    time: "8:00 PM",
+                    location: "Chicago, IL",
+                    venue: "Second City",
+                    price: 35,
+                    image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Stand-up comedy featuring local and national comedians.",
+                    organizer: {
+                        name: "Tom Anderson",
+                        company: "Chicago Comedy Club",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 35, features: ["Comedy show", "Two-drink minimum", "Great atmosphere"] }
+                    ]
+                },
+                '9': {
+                    id: 9,
+                    title: "San Francisco Startup Pitch",
+                    category: "business",
+                    date: "2024-12-25",
+                    time: "10:00 AM",
+                    location: "San Francisco, CA",
+                    venue: "Y Combinator",
+                    price: 0,
+                    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Watch innovative startups pitch their ideas to investors. Connect with entrepreneurs and discover the next big thing in tech.",
+                    organizer: {
+                        name: "Sarah Kim",
+                        company: "SF Startup Hub",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Free Admission", price: 0, features: ["Watch all pitches", "Networking", "Startup directory"] },
+                        { name: "Investor Pass", price: 150, features: ["Watch all pitches", "Investor networking", "Startup directory", "Private Q&A sessions"] }
+                    ]
+                },
+                '10': {
+                    id: 10,
+                    title: "Quebec Winter Carnival",
+                    category: "community",
+                    date: "2025-01-01",
+                    time: "10:00 AM",
+                    location: "Quebec City, QC",
+                    venue: "Old Quebec",
+                    price: 30,
+                    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Celebrate winter with ice sculptures and activities. Experience the magic of Quebec's famous winter carnival.",
+                    organizer: {
+                        name: "Marie Dubois",
+                        company: "Quebec Tourism",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 30, features: ["Access to all activities", "Ice sculpture viewing", "Winter activities"] },
+                        { name: "Family Pass", price: 80, features: ["Access for 4 people", "All activities", "Hot chocolate included"] }
+                    ]
+                },
+                '11': {
+                    id: 11,
+                    title: "Miami Beach Marathon",
+                    category: "sports",
+                    date: "2025-01-05",
+                    time: "6:00 AM",
+                    location: "Miami, FL",
+                    venue: "South Beach",
+                    price: 65,
+                    image: "https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Annual marathon along the beautiful Miami coastline.",
+                    organizer: {
+                        name: "Carlos Rodriguez",
+                        company: "Miami Running Club",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Marathon Registration", price: 65, features: ["26.2 mile course", "Finisher medal", "Race t-shirt", "Post-race celebration"] }
+                    ]
+                },
+                '12': {
+                    id: 12,
+                    title: "Seattle Coffee Festival",
+                    category: "food",
+                    date: "2025-01-10",
+                    time: "9:00 AM",
+                    location: "Seattle, WA",
+                    venue: "Pike Place Market",
+                    price: 40,
+                    image: "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Celebrate Seattle's coffee culture with tastings, workshops, and the best local roasters.",
+                    organizer: {
+                        name: "Lisa Chen",
+                        company: "Seattle Coffee Society",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 40, features: ["Coffee tastings", "Workshops", "Market access", "Tasting cup"] },
+                        { name: "VIP", price: 75, features: ["Unlimited tastings", "Premium workshops", "Market access", "Gift bag"] }
+                    ]
+                },
+                '13': {
+                    id: 13,
+                    title: "Boston Tech Meetup",
+                    category: "tech",
+                    date: "2025-01-15",
+                    time: "6:30 PM",
+                    location: "Boston, MA",
+                    venue: "MIT Media Lab",
+                    price: 0,
+                    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Monthly tech meetup featuring speakers, networking, and innovation discussions.",
+                    organizer: {
+                        name: "Dr. James Wilson",
+                        company: "Boston Tech Community",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Free Admission", price: 0, features: ["Speaker presentations", "Networking", "Light refreshments"] },
+                        { name: "Premium", price: 25, features: ["Speaker presentations", "Networking", "Full dinner", "Premium seating"] }
+                    ]
+                },
+                '14': {
+                    id: 14,
+                    title: "Phoenix Art Walk",
+                    category: "arts",
+                    date: "2025-01-20",
+                    time: "5:00 PM",
+                    location: "Phoenix, AZ",
+                    venue: "Roosevelt Row",
+                    price: 0,
+                    image: "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Monthly art walk featuring local galleries, street art, and live performances.",
+                    organizer: {
+                        name: "Maria Garcia",
+                        company: "Phoenix Arts Council",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Free Walk", price: 0, features: ["Gallery access", "Street art tour", "Live performances"] },
+                        { name: "VIP Tour", price: 35, features: ["Private gallery tours", "Artist meet & greet", "Complimentary drinks"] }
+                    ]
+                },
+                '15': {
+                    id: 15,
+                    title: "Austin Music Conference",
+                    category: "music",
+                    date: "2025-01-25",
+                    time: "10:00 AM",
+                    location: "Austin, TX",
+                    venue: "Austin Convention Center",
+                    price: 199,
+                    image: "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Music industry conference with panels and performances. Discover the latest trends in the music business.",
+                    organizer: {
+                        name: "Jake Thompson",
+                        company: "Austin Music Foundation",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Early Bird", price: 199, features: ["All panels", "Networking events", "Conference materials"] },
+                        { name: "Regular", price: 249, features: ["All panels", "Networking events", "Conference materials", "Lunch included"] },
+                        { name: "VIP", price: 399, features: ["All panels", "Networking events", "Conference materials", "Lunch included", "VIP lounge access"] }
+                    ]
+                },
+                '16': {
+                    id: 16,
+                    title: "Las Vegas Tech Expo",
+                    category: "tech",
+                    date: "2025-01-30",
+                    time: "9:00 AM",
+                    location: "Las Vegas, NV",
+                    venue: "Las Vegas Convention Center",
+                    price: 250,
+                    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Largest technology expo showcasing the latest innovations. Experience the future of technology.",
+                    organizer: {
+                        name: "Tech Expo Inc.",
+                        company: "Tech Expo Inc.",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Expo Pass", price: 250, features: ["Exhibition access", "Keynote speeches", "Networking", "Conference materials"] },
+                        { name: "VIP Pass", price: 450, features: ["Exhibition access", "Keynote speeches", "Networking", "Conference materials", "VIP lounge", "Meet speakers"] }
+                    ]
+                },
+                '17': {
+                    id: 17,
+                    title: "Winnipeg Folk Festival",
+                    category: "music",
+                    date: "2025-02-05",
+                    time: "6:00 PM",
+                    location: "Winnipeg, MB",
+                    venue: "Birds Hill Provincial Park",
+                    price: 55,
+                    image: "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Celebrate folk music with local and international artists. Experience authentic folk culture in the heart of the prairies.",
+                    organizer: {
+                        name: "Winnipeg Folk Festival",
+                        company: "Winnipeg Folk Festival",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 55, features: ["All performances", "Camping access", "Festival program"] },
+                        { name: "VIP", price: 95, features: ["All performances", "VIP camping", "Festival program", "Complimentary meals"] }
+                    ]
+                },
+                '18': {
+                    id: 18,
+                    title: "Quebec City Winter Carnival",
+                    category: "community",
+                    date: "2025-02-10",
+                    time: "10:00 AM",
+                    location: "Quebec City, QC",
+                    venue: "Old Quebec",
+                    price: 30,
+                    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "World's largest winter carnival with ice sculptures, parades, and winter activities.",
+                    organizer: {
+                        name: "Carnaval de Québec",
+                        company: "Carnaval de Québec",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 30, features: ["All activities", "Ice sculptures", "Parades", "Winter games"] },
+                        { name: "Family Pass", price: 80, features: ["Access for 4 people", "All activities", "Hot chocolate", "Souvenir"] }
+                    ]
+                },
+                '19': {
+                    id: 19,
+                    title: "Portland Food Truck Festival",
+                    category: "food",
+                    date: "2025-02-15",
+                    time: "11:00 AM",
+                    location: "Portland, OR",
+                    venue: "Waterfront Park",
+                    price: 20,
+                    image: "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Portland's best food trucks gather for a day of delicious eats and live music.",
+                    organizer: {
+                        name: "Portland Food Truck Association",
+                        company: "Portland Food Truck Association",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 20, features: ["Food truck access", "Live music", "Festival atmosphere"] },
+                        { name: "Tasting Pass", price: 45, features: ["Food samples", "Live music", "Festival atmosphere", "Tasting card"] }
+                    ]
+                },
+                '20': {
+                    id: 20,
+                    title: "Nashville Country Music Night",
+                    category: "music",
+                    date: "2025-02-20",
+                    time: "8:00 PM",
+                    location: "Nashville, TN",
+                    venue: "Grand Ole Opry",
+                    price: 85,
+                    image: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Experience authentic country music at the legendary Grand Ole Opry.",
+                    organizer: {
+                        name: "Grand Ole Opry",
+                        company: "Grand Ole Opry",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 85, features: ["Country music show", "Historic venue", "Great atmosphere"] },
+                        { name: "VIP", price: 150, features: ["Premium seating", "Country music show", "Historic venue", "Meet & greet"] }
+                    ]
+                },
+                '21': {
+                    id: 21,
+                    title: "Detroit Auto Show",
+                    category: "business",
+                    date: "2025-02-25",
+                    time: "10:00 AM",
+                    location: "Detroit, MI",
+                    venue: "TCF Center",
+                    price: 45,
+                    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "North American International Auto Show featuring the latest vehicles and technology.",
+                    organizer: {
+                        name: "Detroit Auto Show",
+                        company: "Detroit Auto Show",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 45, features: ["Vehicle displays", "Technology exhibits", "Show floor access"] },
+                        { name: "Premium", price: 75, features: ["Vehicle displays", "Technology exhibits", "Show floor access", "VIP areas"] }
+                    ]
+                },
+                '22': {
+                    id: 22,
+                    title: "Minneapolis Winter Festival",
+                    category: "community",
+                    date: "2025-03-01",
+                    time: "12:00 PM",
+                    location: "Minneapolis, MN",
+                    venue: "Nicollet Mall",
+                    price: 0,
+                    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Celebrate winter with ice sculptures, winter sports, and hot chocolate.",
+                    organizer: {
+                        name: "Minneapolis Parks",
+                        company: "Minneapolis Parks",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Free Admission", price: 0, features: ["Winter activities", "Ice sculptures", "Hot chocolate", "Live music"] },
+                        { name: "Activity Pass", price: 25, features: ["All activities", "Ice sculptures", "Hot chocolate", "Live music", "Activity tokens"] }
+                    ]
+                },
+                '23': {
+                    id: 23,
+                    title: "Atlanta Film Festival",
+                    category: "arts",
+                    date: "2025-03-05",
+                    time: "7:00 PM",
+                    location: "Atlanta, GA",
+                    venue: "Fox Theatre",
+                    price: 35,
+                    image: "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Premiere independent films and documentaries from around the world.",
+                    organizer: {
+                        name: "Atlanta Film Society",
+                        company: "Atlanta Film Society",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "Single Film", price: 35, features: ["Film screening", "Q&A session", "Program guide"] },
+                        { name: "Festival Pass", price: 150, features: ["All screenings", "Q&A sessions", "Program guide", "Networking events"] }
+                    ]
+                },
+                '24': {
+                    id: 24,
+                    title: "Dallas Sports Expo",
+                    category: "sports",
+                    date: "2025-03-10",
+                    time: "9:00 AM",
+                    location: "Dallas, TX",
+                    venue: "Kay Bailey Hutchison Convention Center",
+                    price: 40,
+                    image: "https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    description: "Interactive sports expo with equipment demos, athlete meet & greets, and fitness challenges.",
+                    organizer: {
+                        name: "Dallas Sports Commission",
+                        company: "Dallas Sports Commission",
+                        image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    },
+                    tickets: [
+                        { name: "General Admission", price: 40, features: ["Expo access", "Equipment demos", "Fitness challenges"] },
+                        { name: "VIP", price: 75, features: ["Expo access", "Equipment demos", "Fitness challenges", "Athlete meet & greets"] }
+                    ]
+                }
+            };
+            
+            return events[eventId] || events['1']; // Default to first event if not found
+        }
+
+        // Populate event details
+        function populateEventDetails() {
+            const event = getEventFromURL();
+            
+            // Set page title
+            document.title = `${event.title} - Eventier`;
+            
+            // Populate hero section
+            document.getElementById('eventHeroImage').style.backgroundImage = `url('${event.image}')`;
+            document.getElementById('eventCategory').textContent = getCategoryName(event.category);
+            document.getElementById('eventTitle').textContent = event.title;
+            document.getElementById('eventDescription').textContent = event.description;
+            
+            // Populate event details
+            document.getElementById('eventDateTime').textContent = `${formatDate(event.date)} at ${event.time}`;
+            document.getElementById('eventLocation').textContent = `${event.venue}, ${event.location}`;
+            document.getElementById('eventOrganizer').textContent = event.organizer.company;
+            
+            // Populate organizer section
+            document.getElementById('organizerImage').style.backgroundImage = `url('${event.organizer.image}')`;
+            document.getElementById('organizerName').textContent = event.organizer.name;
+            document.getElementById('organizerCompany').textContent = event.organizer.company;
+            
+            // Populate tickets
+            const ticketOptions = document.getElementById('ticketOptions');
+            ticketOptions.innerHTML = event.tickets.map(ticket => `
+                <div class="ticket-option">
+                    <div class="ticket-header">
+                        <h3 class="ticket-name">${ticket.name}</h3>
+                        <div class="ticket-price">$${ticket.price}</div>
+                    </div>
+                    <ul class="ticket-features">
+                        ${ticket.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                    <button class="btn btn-primary ticket-btn">Book Now</button>
+                </div>
+            `).join('');
+        }
+
+        // Helper functions
+        function getCategoryName(category) {
+            const categories = {
+                'music': 'Music',
+                'arts': 'Arts & Culture',
+                'sports': 'Sports',
+                'food': 'Food & Drink',
+                'business': 'Business',
+                'community': 'Community',
+                'tech': 'Technology',
+                'education': 'Education'
+            };
+            return categories[category] || category;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                month: 'long', 
+                day: 'numeric',
+                year: 'numeric'
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            populateEventDetails();
+        });
+    </script>
+
+    <style>
+        /* Back Button Styles */
+        .back-button-container {
+            margin-bottom: 30px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            color: #111118;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background: #5047fa;
+            border-color: #5047fa;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(80, 71, 250, 0.3);
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+        }
+
+        .back-button svg {
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Event Details Page Styles */
+        .event-hero {
+            position: relative;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .event-hero-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .event-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 40px;
+            color: white;
+        }
+
+        .event-hero-content {
+            max-width: 800px;
+        }
+
+        .event-category-badge {
+            display: inline-block;
+            background: #5047fa;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .event-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .event-description {
+            font-size: 18px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .event-details-section {
+            margin-bottom: 60px;
+        }
+
+        .event-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+        }
+
+        .event-info-column {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .event-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .detail-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #615f8c;
+            min-width: 120px;
+        }
+
+        .detail-value {
+            font-size: 16px;
+            font-weight: 500;
+            color: #111118;
+        }
+
+        .ticket-column {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .ticket-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ticket-option {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.3s ease;
+        }
+
+        .ticket-option:hover {
+            border-color: #5047fa;
+        }
+
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .ticket-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111118;
+        }
+
+        .ticket-price {
+            font-size: 24px;
+            font-weight: 900;
+            color: #5047fa;
+        }
+
+        .ticket-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .ticket-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #111118;
+            margin-bottom: 8px;
+        }
+
+        .ticket-features li:before {
+            content: "✓";
+            color: #5047fa;
+            font-weight: bold;
+        }
+
+        .ticket-btn {
+            width: 100%;
+        }
+
+        .about-event-section {
+            margin-bottom: 60px;
+        }
+
+        .about-content {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111118;
+            margin: 24px 0 12px 0;
+        }
+
+        .about-content ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .about-content li {
+            margin-bottom: 8px;
+            color: #111118;
+        }
+
+        .organizer-section {
+            margin-bottom: 60px;
+        }
+
+        .organizer-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .organizer-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .organizer-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111118;
+            margin-bottom: 4px;
+        }
+
+        .organizer-company {
+            font-size: 16px;
+            color: #5047fa;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .organizer-description {
+            font-size: 14px;
+            color: #615f8c;
+            line-height: 1.5;
+        }
+
+        .related-events-section {
+            margin-bottom: 60px;
+        }
+
+        .related-events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .related-event-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .related-event-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .related-event-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .related-event-info {
+            padding: 20px;
+        }
+
+        .related-event-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111118;
+            margin-bottom: 8px;
+        }
+
+        .related-event-details {
+            font-size: 14px;
+            color: #615f8c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .event-details-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .event-title {
+                font-size: 36px;
+            }
+
+            .event-hero-overlay {
+                padding: 24px;
+            }
+
+            .organizer-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .related-events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-hero {
+                height: 300px;
+            }
+
+            .detail-label {
+                min-width: 100px;
+                font-size: 13px;
+            }
+
+            .detail-value {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event-title {
+                font-size: 28px;
+            }
+
+            .event-description {
+                font-size: 16px;
+            }
+
+            .ticket-column {
+                padding: 24px;
+            }
+
+            .event-hero {
+                height: 250px;
+            }
+
+            .event-hero-overlay {
+                padding: 16px;
+            }
+
+            .event-detail-item {
+                padding: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .detail-label {
+                min-width: auto;
+            }
+
+            .back-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</body>
+</html>
